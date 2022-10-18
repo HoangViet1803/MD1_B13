@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<label for="word">Nhập từ cần tra:</label>
+<input type="text" name="word" id="word">
+<button type="submit" onclick="searchFn()">Tìm kiếm</button>
+<p id="result"></p>
+<!--JS-->
+<script>
+    let arr_eng = ["banana", "apple", "orange", "pen", "pencil", "book"];
+    let arr_vie = ["chuối", "táo", "cam", "bút", "bút chì", "sách"];
+    let result = document.querySelector('#result');
+    function searchFn() {
+        let word = document.querySelector('#word').value;
+        for (let i = 0; i < arr_eng.length; ++i) {
+            if (arr_eng.indexOf(word) !== -1) {
+                result.innerHTML = arr_vie[arr_eng.indexOf(word)]
+            } else {
+                result.innerHTML = 'Không tìm thấy từ này trong từ điển'
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

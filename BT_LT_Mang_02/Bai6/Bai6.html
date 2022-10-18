@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai6</title>
+</head>
+<body>
+<!--JS-->
+<script>
+  let length = +prompt("nhap so phan tu cua mang");
+  let arr =[]
+  for (let i = 1; i <= length; ++i){
+    arr[i] = prompt(`Nhap vao phan tu thu ${i}`)
+  }
+  for(let i = 0; i < length; ++i){
+    if(arr[i] === "-"){
+      arr[i] ="_"
+    }
+  }
+</script>
+</body>
+</html>

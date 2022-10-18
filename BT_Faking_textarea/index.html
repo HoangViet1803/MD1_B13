@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faking Textarea on Typing</title>
+</head>
+<body>
+<center>
+  <h2>Type anything slowly</h2>
+  <textarea id="input" cols="30" rows="10"></textarea>
+</center>
+<!--JS-->
+<script>
+  let arr = ["T","ô","i"," ","L","à"," ","M","ộ","t"," ","Đ","ứ","a"," ","N","g","ố","c"];
+  let fake = "";
+  document.querySelector('#input').addEventListener('keydown', fakingFn);
+  function fakingFn() {
+    let str = document.querySelector('#input').value;
+    let length = str.length;
+    if(length > 0) {
+      for (let i = 0; i < length; ++i) {
+        fake += arr[i];
+        if (i == 19) {
+          document.querySelector('#input').value ="";
+          fake =""
+        }
+      }
+    }
+    document.querySelector('#input').value = fake;
+    fake ="";
+    setTimeout("fakingFn()",0.5)
+  }
+</script>
+</body>
+</html>
